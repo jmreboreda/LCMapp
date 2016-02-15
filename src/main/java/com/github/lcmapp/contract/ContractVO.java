@@ -27,7 +27,6 @@ public class ContractVO implements ValueObject {
 	private Long contractnumber;
 	
 	public ContractVO() {
-
 	}
 	
 	@Id

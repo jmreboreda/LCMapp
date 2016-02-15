@@ -12,7 +12,7 @@ import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
  *
  * @author jmrb
  */
-public interface ContractDAO extends GenericDAO<ContractVO,Long> {
+public interface ContractDAO extends GenericDAO<ContractVO, Long> {
 
 	ContractVO findContractByNumber(Long number) throws InstanceNotFoundException;	
 	
