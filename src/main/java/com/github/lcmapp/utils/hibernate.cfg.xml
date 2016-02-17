@@ -23,7 +23,7 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
 
         <property name="show_sql">true</property>
 
-       <mapping class="com.github.lcmapp.contract.Contract"/>
+       <mapping class="com.github.lcmapp.contract.ContractVO"/>
 
     </session-factory>
 </hibernate-configuration>

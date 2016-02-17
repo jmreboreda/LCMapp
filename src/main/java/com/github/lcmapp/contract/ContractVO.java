@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author jmrb
  */
 @Entity
-@Table(name = "Contract")
+@Table(name = "contract")
 public class ContractVO implements ValueObject {
 
 	private static final long serialVersionUID = 8674188501454422360L;
