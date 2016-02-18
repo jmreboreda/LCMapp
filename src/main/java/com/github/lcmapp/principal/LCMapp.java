@@ -20,14 +20,14 @@ public class LCMapp {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         if (session != null){
-             System.out.println("Habemus session!!!\n" + session.toString());
+            System.out.println("Habemus session!!!\n");
              
             String hql = "FROM com.github.lcmapp.contract.ContractVO";
             Query query = session.createQuery(hql);
             List results = query.list();
             System.out.println("Resultado: " + results);
              
-             HibernateUtil.getSessionFactory().close();
+            HibernateUtil.getSessionFactory().close();
         }
            
        

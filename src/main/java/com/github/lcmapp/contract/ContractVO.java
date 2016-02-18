@@ -44,7 +44,7 @@ public class ContractVO implements ValueObject {
 		return contractnumber;
 	}
 
-	public void setContracNumber(Long contractnumber) {
+	public void setContractNumber(Long contractnumber) {
 		this.contractnumber = contractnumber;
 	}
 }
