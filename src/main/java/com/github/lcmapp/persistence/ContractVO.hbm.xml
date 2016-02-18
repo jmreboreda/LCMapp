@@ -8,5 +8,6 @@
 			<generator class="native"></generator>
 		</id>
 		<property name="contractnumber" type="long" column="contractnumber"/>
+                <property name="clientgmname" type="string" column="clientgmname"/>
 	</class>
 </hibernate-mapping>

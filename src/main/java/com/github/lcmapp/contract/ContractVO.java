@@ -21,30 +21,39 @@ import javax.persistence.Table;
 @Table(name = "contract")
 public class ContractVO implements ValueObject {
 
-	private static final long serialVersionUID = 8674188501454422360L;
-	
-	private Long id;
-	private Long contractnumber;
-	
-	public ContractVO() {
-	}
-	
-	@Id
-	@SequenceGenerator(name="ContractIdGenerator", sequenceName="ContractIdSequence")
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="ContractIdGenerator")
-	public Long getId() {
-		return id;
-	}
+    private static final long serialVersionUID = 8674188501454422360L;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private Long id;
+    private Long contractnumber;
+    private String clientgmname;
 
-	public Long getContractNumber() {
-		return contractnumber;
-	}
+    public ContractVO() {
+    }
 
-	public void setContractNumber(Long contractnumber) {
-		this.contractnumber = contractnumber;
-	}
+    @Id
+    @SequenceGenerator(name="ContractIdGenerator", sequenceName="ContractIdSequence")
+    @GeneratedValue(strategy=GenerationType.AUTO, generator="ContractIdGenerator")
+    public Long getId() {
+            return id;
+    }
+
+    public void setId(Long id) {
+            this.id = id;
+    }
+
+    public Long getContractnumber() {
+        return contractnumber;
+    }
+
+    public void setContractnumber(Long contractnumber) {
+        this.contractnumber = contractnumber;
+    }
+
+    public String getClientgmname() {
+        return clientgmname;
+    }
+
+    public void setClientgmname(String clientgmname) {
+        this.clientgmname = clientgmname;
+    }
 }

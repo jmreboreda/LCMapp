@@ -29,7 +29,8 @@ public class LCMapp {
             ContractVO contractVO;
             for(Object item: results){
                 contractVO = (ContractVO) item;
-                System.out.println("Resultado: " + contractVO.getContractNumber());
+                System.out.println("Resultado:\n Id -> "+ contractVO.getId() + " Número contrato -> "
+                        + contractVO.getContractnumber() + " Cliente GM -> " + contractVO.getClientgmname());
             }
             HibernateUtil.getSessionFactory().close();
         }

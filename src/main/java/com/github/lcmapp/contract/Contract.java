@@ -17,6 +17,7 @@ public class Contract implements BusinessObject {
     
     private Long id;
     private Long contractnumber;
+    private String clientgmname;
 
     
     public Contract() {
@@ -40,6 +41,14 @@ public class Contract implements BusinessObject {
     
     public void setContractnumber(Long contractnumber) {
         this.contractnumber = contractnumber;
+    }
+
+    public String getClientgmname() {
+        return clientgmname;
+    }
+
+    public void setClientgmname(String clientgmname) {
+        this.clientgmname = clientgmname;
     }
     
 }
