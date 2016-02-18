@@ -22,7 +22,7 @@ public class LCMapp {
         if (session != null){
              System.out.println("Habemus session!!!\n" + session.toString());
              
-            String hql = "FROM contract";
+            String hql = "FROM com.github.lcmapp.contract.ContractVO";
             Query query = session.createQuery(hql);
             List results = query.list();
             System.out.println("Resultado: " + results);

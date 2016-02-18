@@ -5,7 +5,7 @@
  */
 package com.github.lcmapp.contract;
 
-import com.github.lcmapp.model.DAO.BusinessObject;
+import com.github.lcmapp.model.BusinessObject;
 
 /**
  *
