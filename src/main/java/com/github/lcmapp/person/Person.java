@@ -146,8 +146,4 @@ public class Person implements BusinessObject {
     public void setNacionality(String nacionality) {
         this.nacionality = nacionality;
     }
-
-    
- 
-  
 }

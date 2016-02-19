@@ -14,6 +14,6 @@ import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
  */
 public interface PersonDAO extends GenericDAO<PersonVO, Long> {
 
-	PersonVO findPersonByNumber(Long number) throws InstanceNotFoundException;	
-	
+    PersonVO findPersonByNumber(Long number) throws InstanceNotFoundException;
+        
 }
