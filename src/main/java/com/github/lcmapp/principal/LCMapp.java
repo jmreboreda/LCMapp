@@ -10,7 +10,7 @@ import com.github.lcmapp.model.person.Person;
 import com.github.lcmapp.model.person.PersonDaoHibernate;
 import com.github.lcmapp.model.person.PersonVO;
 import com.github.lcmapp.utils.HibernateUtil;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -37,22 +37,28 @@ public class LCMapp {
 //                        + contractVO.getContractnumber() + "] [Cliente GM: " + contractVO.getClientgmname() + "]");
 //                counter++;
 //            }
-            
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             PersonDaoHibernate personDAO = new PersonDaoHibernate();
-            List<PersonVO> personsVO =new ArrayList();
-            PersonVO personVO = new PersonVO();
-            Person person = new Person();
+            List<PersonVO> personsVO;
+            PersonVO personVO;
+            Person person;
             try{
                 personsVO = personDAO.findAllPersons();
                 if(personsVO.size() > 0){
                     for(Object tupla: personsVO){
                         personVO = (PersonVO) tupla;
                         person = (PersonMapper.proccessVOBO(personVO));
-                        System.out.println(person.getLastname());
+                        System.out.println("[" + person.getId() + "] " + person.getLastname()+ ", " + person.getName() + " nacido el "
+                        + formatter.format(person.getBirthdate()));
                     }
                 }
+                else
+                {
+                    System.out.println("No se han encontrado personas.");
+                }
             }
-            catch (Exception InstanceNotFoundException){   
+            catch (Exception InstanceNotFoundException){ 
+                InstanceNotFoundException.printStackTrace();
             }
             HibernateUtil.getSessionFactory().close();
         }

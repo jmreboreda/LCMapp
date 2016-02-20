@@ -7,6 +7,7 @@ package com.github.lcmapp.model.person;
 
 import com.github.lcmapp.model.dao.GenericDaoHibernate;
 import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
+import com.github.lcmapp.utils.HibernateUtil;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -41,8 +42,9 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 
     @Override
     public List<PersonVO> findAllPersons() throws InstanceNotFoundException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
         
-        Session session = sessionFactory.getCurrentSession();
+        //Session session = sessionFactory.getCurrentSession();
 		
         Query query = session.createQuery("from PersonVO");
 
