@@ -3,7 +3,7 @@
  * Aplicación desarrollada por José M. Reboreda Barcia
  * para uso propio en Gestoría MOLDES.
  */
-package com.github.lcmapp.person;
+package com.github.lcmapp.model.person;
 
 import com.github.lcmapp.model.ValueObject;
 import java.util.Date;
@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Table(name = "person")
 public class PersonVO implements ValueObject {
 
-    private static final long serialVersionUID = 8674188501454422360L;
+    private static final long serialVersionUID = 5361621336550354239L;
 
     private Long id;
     private Integer personid;

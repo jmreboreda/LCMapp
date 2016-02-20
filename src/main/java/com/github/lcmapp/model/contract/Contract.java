@@ -3,7 +3,7 @@
  * Aplicación desarrollada por José M. Reboreda Barcia
  * para uso propio en Gestoría MOLDES.
  */
-package com.github.lcmapp.contract;
+package com.github.lcmapp.model.contract;
 
 import com.github.lcmapp.model.BusinessObject;
 

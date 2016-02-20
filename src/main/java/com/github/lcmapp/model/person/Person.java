@@ -3,7 +3,7 @@
  * Aplicación desarrollada por José M. Reboreda Barcia
  * para uso propio en Gestoría MOLDES.
  */
-package com.github.lcmapp.person;
+package com.github.lcmapp.model.person;
 
 import com.github.lcmapp.model.BusinessObject;
 import java.util.Date;
@@ -13,8 +13,8 @@ import java.util.Date;
  * @author jmrb
  */
 public class Person implements BusinessObject {
-    
-    private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = 3443058171068955864L;
     
     private Long id;
     private Integer personid;
@@ -28,7 +28,7 @@ public class Person implements BusinessObject {
     private String address;
     private String location;
     private Integer postalcode;
-    private Integer studies;
+    private String studies;
     private String nacionality;
 
     
@@ -131,11 +131,11 @@ public class Person implements BusinessObject {
         this.postalcode = postalcode;
     }
 
-    public Integer getStudies() {
+    public String getStudies() {
         return studies;
     }
 
-    public void setStudies(Integer studies) {
+    public void setStudies(String studies) {
         this.studies = studies;
     }
 

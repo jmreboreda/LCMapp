@@ -3,7 +3,7 @@
  * Aplicación desarrollada por José M. Reboreda Barcia
  * para uso propio en Gestoría MOLDES.
  */
-package com.github.lcmapp.contract;
+package com.github.lcmapp.model.contract;
 
 import com.github.lcmapp.model.ValueObject;
 import javax.persistence.Entity;
@@ -21,8 +21,8 @@ import javax.persistence.Table;
 @Table(name = "contract")
 public class ContractVO implements ValueObject {
 
-    private static final long serialVersionUID = 8674188501454422360L;
-
+    private static final long serialVersionUID = 3109223430632068441L;
+    
     private Long id;
     private Long contractnumber;
     private String clientgmname;

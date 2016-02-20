@@ -9,12 +9,13 @@
 		</id>
                 <property name="personid" type="int"/>
                 <property name="lastname" type="varchar"/>
+                    <column name="lastname" length="100"/>
                 <property name="name" type="varchar"/>
                 <property name="nifcif" type="varchar"/>
                 <property name="nifcifdup" type="int"/>
                 <property name="inss" type="varchar"/>
                 <property name="birthdate" type="date"/>
-                <property name="civilstatus" type="varchar"/>
+                <property name="civilstatus" type="int"/>
                 <property name="address" type="varchar"/>
                 <property name="location" type="varchar"/>
                 <property name="postalcode" type="int"/>
