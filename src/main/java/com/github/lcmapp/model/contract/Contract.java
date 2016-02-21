@@ -3,9 +3,9 @@
  * Aplicación desarrollada por José M. Reboreda Barcia
  * para uso propio en Gestoría MOLDES.
  */
-package com.github.lcmapp.contract;
+package com.github.lcmapp.model.contract;
 
-import com.github.lcmapp.model.DAO.BusinessObject;
+import com.github.lcmapp.model.BusinessObject;
 
 /**
  *
@@ -17,6 +17,7 @@ public class Contract implements BusinessObject {
     
     private Long id;
     private Long contractnumber;
+    private String clientgmname;
 
     
     public Contract() {
@@ -40,6 +41,14 @@ public class Contract implements BusinessObject {
     
     public void setContractnumber(Long contractnumber) {
         this.contractnumber = contractnumber;
+    }
+
+    public String getClientgmname() {
+        return clientgmname;
+    }
+
+    public void setClientgmname(String clientgmname) {
+        this.clientgmname = clientgmname;
     }
     
 }

@@ -18,13 +18,13 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author jmrb
  */
-public class GenericDAOHibernate<E, PK extends Serializable> implements GenericDAO<E, PK> {
+public class GenericDaoHibernate<E, PK extends Serializable> implements GenericDAO<E, PK> {
 
 	private SessionFactory sessionFactory;
 	private Class<E> entityClass;
 
 	@SuppressWarnings("unchecked")
-	public GenericDAOHibernate() {
+	public GenericDaoHibernate() {
             this.entityClass = (Class<E>) ((ParameterizedType) getClass().
 			getGenericSuperclass()).getActualTypeArguments()[0];		
 	}

@@ -5,8 +5,8 @@
  */
 package com.github.lcmapp.model.dao;
 
+import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
 import java.io.Serializable;
-import javax.management.InstanceNotFoundException;
 
 /**
  *
