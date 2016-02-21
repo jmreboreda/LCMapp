@@ -15,8 +15,10 @@ import java.util.List;
  */
 public interface ContractTypeDAO extends GenericDAO<ContractTypeVO, Long> {
 
-	ContractTypeVO findContractTypeByNumber(Long number) throws InstanceNotFoundException;
+    void create(ContractTypeVO contracttypeVO);
+    
+    ContractTypeVO findContractTypeByNumber(Long number) throws InstanceNotFoundException;
         
-        List<ContractTypeVO> findAllContractTypes() throws InstanceNotFoundException;
+    List<ContractTypeVO> findAllContractTypes() throws InstanceNotFoundException;
 	
 }
