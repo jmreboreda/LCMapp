@@ -27,6 +27,7 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
         <mapping class="com.github.lcmapp.model.contracttype.ContractTypeVO"/>
         <mapping class="com.github.lcmapp.model.person.PersonVO"/>
         <mapping class="com.github.lcmapp.model.contractchange.ContractChangeVO"/>
+        <mapping class="com.github.lcmapp.model.studies.StudiesVO"/>
                
     </session-factory>
 </hibernate-configuration>
