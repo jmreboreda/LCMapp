@@ -53,9 +53,7 @@ public class LCMapp {
                     for(Object tupla: personsVO){
                         personVO = (PersonVO) tupla;
                         person = (PersonMapper.proccessVOBO(personVO));
-                        
-                        System.out.println("[" + person.getId() + "] " + person.getLastname()+ ", " + person.getName() + " nacido el "
-                        + formatter.format(person.getBirthdate()));
+                        person.listData();
                     }
                 }
                 else
