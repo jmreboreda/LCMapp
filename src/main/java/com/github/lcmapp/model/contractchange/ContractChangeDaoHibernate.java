@@ -22,19 +22,21 @@ public class ContractChangeDaoHibernate extends GenericDaoHibernate<ContractChan
         
 	public ContractChangeVO findContractChangeByName(String name) throws InstanceNotFoundException {
 		
-		Session session = sessionFactory.getCurrentSession();
+//        Session session = sessionFactory.getCurrentSession();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		Query query = session.createQuery("select p from ContractChanheVO p where p.name=:name");
-		query.setParameter("name", name);
-		
-		ContractChangeVO change = (ContractChangeVO) query.uniqueResult();
-		
-		if(change == null) {
-			throw new InstanceNotFoundException(name, PersonVO.class.getSimpleName());
-		}
-		
-		return change;
-	}
+        Query query = session.createQuery("select p from ContractChangeVO p where p.name=:name");
+        query.setParameter("name", name);
+
+        ContractChangeVO change = (ContractChangeVO) query.uniqueResult();
+
+        if(change == null) {
+                throw new InstanceNotFoundException(name, PersonVO.class.getSimpleName());
+        }
+
+        return change;
+        }
 
     @Override
     public ContractChangeVO findContractChangeByNumber(Long number) throws InstanceNotFoundException {
@@ -44,9 +46,7 @@ public class ContractChangeDaoHibernate extends GenericDaoHibernate<ContractChan
     @Override
     public List<ContractChangeVO> findAllContractChanges() throws InstanceNotFoundException {
         
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        //Session session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
 		
         Query query = session.createQuery("from ContractTypeVO");
 

@@ -7,8 +7,6 @@ package com.github.lcmapp.model.mappers;
 
 import com.github.lcmapp.model.contractchange.ContractChange;
 import com.github.lcmapp.model.contractchange.ContractChangeVO;
-import com.github.lcmapp.model.contracttype.ContractType;
-import com.github.lcmapp.model.contracttype.ContractTypeVO;
 
 public class ContractChangeMapper {
 
@@ -30,18 +28,21 @@ public class ContractChangeMapper {
 		return contractchange;
 	}
 	
-	public static ContractTypeVO proccessBOVO(ContractType contracttype) {
+	public static ContractChangeVO proccessBOVO(ContractChange contractchange) {
 		
-		if(contracttype == null) {
+		if(contractchange == null) {
                     return null;
 		}
 		
-		ContractTypeVO contracttypeVO = new ContractTypeVO();
+		ContractChangeVO contractchangeVO = new ContractChangeVO();
 
-		contracttypeVO.setId(contracttype.getId());
-                contracttypeVO.setContracttypeid(contracttype.getContracttypeid());
-                contracttypeVO.setContracttypename(contracttype.getContracttypename());
-		
-		return contracttypeVO;
+		contractchangeVO.setId(contractchange.getId());
+                contractchangeVO.setContractid(contractchange.getContractid());
+                contractchangeVO.setDatechange(contractchange.getDatechange());
+                contractchangeVO.setContractfieldname(contractchange.getContractfieldname());
+                contractchangeVO.setNewvalue(contractchange.getNewvalue());
+                contractchangeVO.setOldvalue(contractchange.getOldvalue());
+
+		return contractchangeVO;
 	}
 }
