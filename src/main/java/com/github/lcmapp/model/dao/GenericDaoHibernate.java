@@ -22,6 +22,7 @@ public class GenericDaoHibernate<E, PK extends Serializable> implements GenericD
 
 	private SessionFactory sessionFactory;
 	private Class<E> entityClass;
+        private Session session;
 
 	@SuppressWarnings("unchecked")
 	public GenericDaoHibernate() {

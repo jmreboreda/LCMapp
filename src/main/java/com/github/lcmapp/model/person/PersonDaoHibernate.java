@@ -16,23 +16,23 @@ import org.hibernate.SessionFactory;
 
 public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> implements PersonDAO {
 	
-	private SessionFactory sessionFactory;
-        
-	public PersonVO findPersonByName(String name) throws InstanceNotFoundException {
-		
-		Session session = sessionFactory.getCurrentSession();
-		
-		Query query = session.createQuery("select p from PersonVO p where p.name=:name");
-		query.setParameter("name", name);
-		
-		PersonVO person = (PersonVO) query.uniqueResult();
-		
-		if(person == null) {
-			throw new InstanceNotFoundException(name, PersonVO.class.getSimpleName());
-		}
-		
-		return person;
-	}
+    private SessionFactory sessionFactory;
+
+    public PersonVO findPersonByName(String name) throws InstanceNotFoundException {
+
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("select p from PersonVO p where p.name=:name");
+        query.setParameter("name", name);
+
+        PersonVO person = (PersonVO) query.uniqueResult();
+
+        if(person == null) {
+                throw new InstanceNotFoundException(name, PersonVO.class.getSimpleName());
+        }
+
+        return person;
+    }
 
     @Override
     public PersonVO findPersonByNumber(Long number) throws InstanceNotFoundException {

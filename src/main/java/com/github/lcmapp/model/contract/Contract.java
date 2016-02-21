@@ -6,6 +6,10 @@
 package com.github.lcmapp.model.contract;
 
 import com.github.lcmapp.model.BusinessObject;
+import com.github.lcmapp.model.contractchange.ContractChange;
+import com.github.lcmapp.model.contractchange.ContractChangeDaoHibernate;
+import com.github.lcmapp.model.contractchange.ContractChangeVO;
+import com.github.lcmapp.model.mappers.ContractChangeMapper;
 
 /**
  *
@@ -49,6 +53,16 @@ public class Contract implements BusinessObject {
 
     public void setClientgmname(String clientgmname) {
         this.clientgmname = clientgmname;
+    }
+    
+    public void ContractChange(ContractChange contractchange){
+        
+        ContractChangeDaoHibernate contractchangeDAOhibernate = new ContractChangeDaoHibernate();
+        ContractChangeVO contractchangeVO;
+        
+        contractchangeVO = ContractChangeMapper.proccessBOVO(contractchange);
+        contractchangeDAOhibernate.create(contractchangeVO);
+        
     }
     
 }
