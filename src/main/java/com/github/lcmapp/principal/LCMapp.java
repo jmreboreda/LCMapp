@@ -12,7 +12,6 @@ import com.github.lcmapp.model.person.PersonVO;
 import com.github.lcmapp.utils.HibernateUtil;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import org.hibernate.Session;
 
 /**
  *
@@ -22,21 +21,10 @@ public class LCMapp {
     
     public static void main (String args[]){
         
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        if (session != null){
-            System.out.println("Habemus session!!!\n");
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        if (session != null){
+//            System.out.println("Habemus session!!!\n");
              
-//            String hql = "from ContractVO";
-//            Query query = session.createQuery(hql);
-//            List results = query.list();
-//            ContractVO contractVO;
-//            int counter = 1;
-//            for(Object tupla: results){
-//                contractVO = (ContractVO) tupla;
-//                System.out.println("Resultado " + counter + ": [Id: " + contractVO.getId() + "] [Número contrato: "
-//                        + contractVO.getContractnumber() + "] [Cliente GM: " + contractVO.getClientgmname() + "]");
-//                counter++;
-//            }
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             PersonDaoHibernate personDAO = new PersonDaoHibernate();
             List<PersonVO> personsVO;
@@ -48,13 +36,14 @@ public class LCMapp {
                     for(Object tupla: personsVO){
                         personVO = (PersonVO) tupla;
                         person = (PersonMapper.proccessVOBO(personVO));
+                        
                         System.out.println("[" + person.getId() + "] " + person.getLastname()+ ", " + person.getName() + " nacido el "
                         + formatter.format(person.getBirthdate()));
                     }
                 }
                 else
                 {
-                    System.out.println("No se han encontrado personas.");
+                    System.out.println("No se han encontrado personas");
                 }
             }
             catch (Exception InstanceNotFoundException){ 
@@ -62,5 +51,5 @@ public class LCMapp {
             }
             HibernateUtil.getSessionFactory().close();
         }
-    }
+//    }
 }

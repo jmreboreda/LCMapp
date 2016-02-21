@@ -30,7 +30,7 @@ public class PersonMapper {
                 person.setAddress(personVO.getAddress());
                 person.setLocation(personVO.getLocation());
                 person.setPostalcode(personVO.getPostalcode());
-//                person.setStudies(personVO.getStudies());
+                person.setStudies(personVO.getStudies());
                 person.setNacionality(personVO.getNacionality());
 		
 		return person;
@@ -39,7 +39,7 @@ public class PersonMapper {
 	public static PersonVO proccessBOVO(Person person) {
 		
 		if(person == null) {
-			return null;
+                    return null;
 		}
 		
 		PersonVO personVO = new PersonVO();
@@ -56,7 +56,7 @@ public class PersonMapper {
                 personVO.setAddress(person.getAddress());
                 personVO.setLocation(person.getLocation());
                 personVO.setPostalcode(person.getPostalcode());
-//                personVO.setStudies(person.getStudies());
+                personVO.setStudies(person.getStudies());
                 personVO.setNacionality(person.getNacionality());
 		
 		return personVO;

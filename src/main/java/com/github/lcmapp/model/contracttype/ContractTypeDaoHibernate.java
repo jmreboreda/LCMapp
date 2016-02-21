@@ -3,10 +3,11 @@
  * Aplicación desarrollada por José M. Reboreda Barcia
  * para uso propio en Gestoría MOLDES.
  */
-package com.github.lcmapp.model.person;
+package com.github.lcmapp.model.contracttype;
 
 import com.github.lcmapp.model.dao.GenericDaoHibernate;
 import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
+import com.github.lcmapp.model.person.*;
 import com.github.lcmapp.utils.HibernateUtil;
 import java.util.List;
 import org.hibernate.Query;
@@ -14,12 +15,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 
-public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> implements PersonDAO {
+public class ContractTypeDaoHibernate extends GenericDaoHibernate<ContractTypeVO,Long> implements ContractTypeDAO {
 	
 
 	private SessionFactory sessionFactory;
         
-	public PersonVO findPersonByName(String name) throws InstanceNotFoundException {
+	public PersonVO findContractTypeByName(String name) throws InstanceNotFoundException {
 		
 		Session session = sessionFactory.getCurrentSession();
 		
@@ -36,23 +37,23 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 	}
 
     @Override
-    public PersonVO findPersonByNumber(Long number) throws InstanceNotFoundException {
+    public ContractTypeVO findContractTypeByNumber(Long number) throws InstanceNotFoundException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<PersonVO> findAllPersons() throws InstanceNotFoundException {
+    public List<ContractTypeVO> findAllContractTypes() throws InstanceNotFoundException {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         //Session session = sessionFactory.getCurrentSession();
 		
-        Query query = session.createQuery("from PersonVO");
+        Query query = session.createQuery("from ContractTypeVO");
 
         @SuppressWarnings("unchecked")
-        List<PersonVO> personsVO = (List<PersonVO>) query.list();
+        List<ContractTypeVO> contracttypesVO = (List<ContractTypeVO>) query.list();
 
-        return personsVO;
+        return contracttypesVO;
     }
 
 }

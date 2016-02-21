@@ -28,7 +28,7 @@ public class Person implements BusinessObject {
     private String address;
     private String location;
     private Integer postalcode;
-    private String studies;
+    private Integer studies;
     private String nacionality;
 
     
@@ -131,11 +131,11 @@ public class Person implements BusinessObject {
         this.postalcode = postalcode;
     }
 
-    public String getStudies() {
+    public Integer getStudies() {
         return studies;
     }
 
-    public void setStudies(String studies) {
+    public void setStudies(Integer studies) {
         this.studies = studies;
     }
 
