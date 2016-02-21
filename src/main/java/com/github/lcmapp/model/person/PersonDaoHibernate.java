@@ -16,7 +16,6 @@ import org.hibernate.SessionFactory;
 
 public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> implements PersonDAO {
 	
-
 	private SessionFactory sessionFactory;
         
 	public PersonVO findPersonByName(String name) throws InstanceNotFoundException {
@@ -54,5 +53,4 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 
         return personsVO;
     }
-
 }

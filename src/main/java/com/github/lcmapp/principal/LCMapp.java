@@ -24,7 +24,7 @@ public class LCMapp {
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        if (session != null){
 //            System.out.println("Habemus session!!!\n");
-             
+
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             PersonDaoHibernate personDAO = new PersonDaoHibernate();
             List<PersonVO> personsVO;
