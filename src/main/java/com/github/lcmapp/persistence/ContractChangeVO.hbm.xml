@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.6.dtd">
+<hibernate-mapping>
+	<class name="com.github.lcmapp.model.contractchange.ContractChangeVO" table="contractchange">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+                <property name="contractid" type="long"/>
+                <property name ="datechange" type="date"/>
+                <property name ="contractfieldname" type="varchar"/>
+                <property name ="newvalue" type="varchar"/>   
+                <property name ="oldvalue" type="varchar"/>          
+	</class>
+</hibernate-mapping>
