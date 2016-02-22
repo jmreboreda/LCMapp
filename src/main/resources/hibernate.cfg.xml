@@ -19,7 +19,7 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
         <!-- Disable the second-level cache  -->
         <property  name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
 
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <property name="show_sql">true</property>
        
@@ -27,6 +27,7 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
         <mapping class="com.github.lcmapp.model.contracttype.ContractTypeVO"/>
         <mapping class="com.github.lcmapp.model.person.PersonVO"/>
         <mapping class="com.github.lcmapp.model.contractchange.ContractChangeVO"/>
+        <mapping class="com.github.lcmapp.model.studies.StudiesVO"/>
                
     </session-factory>
 </hibernate-configuration>

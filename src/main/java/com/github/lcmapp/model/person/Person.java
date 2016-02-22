@@ -6,6 +6,7 @@
 package com.github.lcmapp.model.person;
 
 import com.github.lcmapp.model.BusinessObject;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -145,5 +146,13 @@ public class Person implements BusinessObject {
 
     public void setNacionality(String nacionality) {
         this.nacionality = nacionality;
+    }
+    
+    public void listData(){
+        
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        System.out.println("[" + getId() + "] " + getLastname()+ ", " + getName() + " nacimiento el "
+                        + formatter.format(getBirthdate()) + ", con NIF " + getNifcif()
+                        + ", y domicilio en " + getPostalcode() + " " + getLocation() + ", " + getAddress());
     }
 }
