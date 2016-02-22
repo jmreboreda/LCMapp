@@ -17,6 +17,14 @@ import org.hibernate.SessionFactory;
 public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> implements PersonDAO {
 	
     private SessionFactory sessionFactory;
+    
+    public void createPerson(PersonVO personVO){
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        Query query = session.createQuery("insert into PersonVO");
+        int result = query.executeUpdate();
+    }
 
     public PersonVO findPersonByName(String name) throws InstanceNotFoundException {
 

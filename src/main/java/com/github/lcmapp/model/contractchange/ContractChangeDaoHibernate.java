@@ -20,6 +20,18 @@ public class ContractChangeDaoHibernate extends GenericDaoHibernate<ContractChan
 
 	private SessionFactory sessionFactory;
         
+        public void create(ContractChangeVO contractchangeVO){
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        session.beginTransaction();
+        session.save(contractchangeVO);
+        
+        session.getTransaction().commit();
+        
+        HibernateUtil.getSessionFactory().close();
+    }
+        
 	public ContractChangeVO findContractChangeByName(String name) throws InstanceNotFoundException {
 		
 //        Session session = sessionFactory.getCurrentSession();

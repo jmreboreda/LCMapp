@@ -75,7 +75,10 @@ public class LCMapp {
             contractchangeVO.setContractid(123456L);
             Date fecha = new Date();
             contractchangeVO.setDatechange(fecha);
-            
+            contractchangeVO.setContractfieldname("clientgmname");
+            contractchangeVO.setNewvalue("NuevoClienteGM");
+            contractchangeVO.setOldvalue("AnteriorClienteGM");
+             
             contractchange = ContractChangeMapper.proccessVOBO(contractchangeVO);
             
             Contract contract = new Contract();
