@@ -148,7 +148,7 @@ public class Person implements BusinessObject {
         this.nacionality = nacionality;
     }
     
-    public void listData(){
+    public void list(){
         
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         System.out.println("[" + getId() + "] " + getLastname()+ ", " + getName() + " nacimiento el "

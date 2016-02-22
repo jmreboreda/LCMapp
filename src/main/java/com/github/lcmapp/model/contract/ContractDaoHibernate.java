@@ -8,7 +8,6 @@ package com.github.lcmapp.model.contract;
 import com.github.lcmapp.model.dao.GenericDaoHibernate;
 import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
 import com.github.lcmapp.model.person.*;
-import com.github.lcmapp.utils.HibernateUtil;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -44,9 +43,8 @@ public class ContractDaoHibernate extends GenericDaoHibernate<ContractVO, Long> 
     @Override
     public List<ContractVO> findAllContracts() throws InstanceNotFoundException {
         
-        Session session = HibernateUtil.getSessionFactory().openSession();
         
-        //Session session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
 		
         Query query = session.createQuery("from ContractVO");
 

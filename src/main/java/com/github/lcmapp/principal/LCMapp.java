@@ -5,17 +5,11 @@
  */
 package com.github.lcmapp.principal;
 
-import com.github.lcmapp.model.contract.Contract;
-import com.github.lcmapp.model.contractchange.ContractChange;
-import com.github.lcmapp.model.contractchange.ContractChangeVO;
-import com.github.lcmapp.model.mappers.ContractChangeMapper;
 import com.github.lcmapp.model.mappers.PersonMapper;
 import com.github.lcmapp.model.person.Person;
 import com.github.lcmapp.model.person.PersonDaoHibernate;
 import com.github.lcmapp.model.person.PersonVO;
-import com.github.lcmapp.utils.HibernateUtil;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -29,14 +23,8 @@ public class LCMapp {
     
     public static void main (String args[]){
         
-        session = HibernateUtil.getSessionFactory().openSession();
-        if (session != null)
-            System.out.println("Habemus session!!!\n");
-
         PersonList();
-        ContractChange();
         
-        HibernateUtil.getSessionFactory().close();
     }
     
     
@@ -44,16 +32,16 @@ public class LCMapp {
     
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             PersonDaoHibernate personDAOhibernate = new PersonDaoHibernate();
-            List<PersonVO> personsVO;
+            List<Person> persons;
             PersonVO personVO;
             Person person;
             try{
-                personsVO = personDAOhibernate.findAllPersons();
-                if(personsVO.size() > 0){
-                    for(Object tupla: personsVO){
+                persons = personDAOhibernate.findAllPersons();
+                if(persons.size() > 0){
+                    for(Object tupla: persons){
                         personVO = (PersonVO) tupla;
                         person = (PersonMapper.proccessVOBO(personVO));
-                        person.listData();
+                        person.list();
                     }
                 }
                 else
@@ -65,25 +53,4 @@ public class LCMapp {
                 InstanceNotFoundException.printStackTrace();
             }
         }
-    
-    
-    public static void ContractChange(){
-        
-            ContractChange contractchange;
-            ContractChangeVO contractchangeVO = new ContractChangeVO();
-            
-            contractchangeVO.setContractid(123456L);
-            Date fecha = new Date();
-            contractchangeVO.setDatechange(fecha);
-            contractchangeVO.setContractfieldname("clientgmname");
-            contractchangeVO.setNewvalue("NuevoClienteGM");
-            contractchangeVO.setOldvalue("AnteriorClienteGM");
-             
-            contractchange = ContractChangeMapper.proccessVOBO(contractchangeVO);
-            
-            Contract contract = new Contract();
-            contract.ContractChange(contractchange);
-    }
 }
-
-        

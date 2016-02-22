@@ -13,12 +13,12 @@ import java.util.List;
  *
  * @author jmrb
  */
-public interface PersonDAO extends GenericDAO<PersonVO, Long> {
+public interface PersonDao extends GenericDAO<PersonVO, Long> {
 
     void create(PersonVO personVO);
     
-    PersonVO findPersonByNumber(Long number) throws InstanceNotFoundException;
+    PersonVO findPersonByName(String name) throws InstanceNotFoundException;
     
-    List<PersonVO> findAllPersons() throws InstanceNotFoundException;
+    List<Person> findAllPersons() throws InstanceNotFoundException;
         
 }

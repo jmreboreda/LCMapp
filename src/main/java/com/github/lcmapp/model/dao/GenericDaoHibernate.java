@@ -12,6 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 /**
@@ -23,16 +24,18 @@ public class GenericDaoHibernate<E, PK extends Serializable> implements GenericD
 	private SessionFactory sessionFactory;
 	private Class<E> entityClass;
         private Session session;
-
+        
 	@SuppressWarnings("unchecked")
 	public GenericDaoHibernate() {
             this.entityClass = (Class<E>) ((ParameterizedType) getClass().
 			getGenericSuperclass()).getActualTypeArguments()[0];		
 	}
-	
-	public void setSessionFactory(SessionFactory sessionFactory) {
+        
+        @Autowired
+        public void setSessionFactory(SessionFactory sessionFactory) {
             this.sessionFactory = sessionFactory;
-	}
+        }
+
 	
 	protected Session getSession() {
             return sessionFactory.getCurrentSession();

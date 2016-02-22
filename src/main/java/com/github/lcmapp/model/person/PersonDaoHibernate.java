@@ -7,25 +7,24 @@ package com.github.lcmapp.model.person;
 
 import com.github.lcmapp.model.dao.GenericDaoHibernate;
 import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
-import com.github.lcmapp.utils.HibernateUtil;
+import com.github.lcmapp.model.mappers.PersonMapper;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-
-public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> implements PersonDAO {
+@Repository("personDao")
+@Transactional
+public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> implements PersonDao {
 	
+    @Autowired
     private SessionFactory sessionFactory;
-    
-    public void createPerson(PersonVO personVO){
-        
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        Query query = session.createQuery("insert into PersonVO");
-        int result = query.executeUpdate();
-    }
 
+    @Override
     public PersonVO findPersonByName(String name) throws InstanceNotFoundException {
 
         Session session = sessionFactory.getCurrentSession();
@@ -43,22 +42,21 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
     }
 
     @Override
-    public PersonVO findPersonByNumber(Long number) throws InstanceNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<PersonVO> findAllPersons() throws InstanceNotFoundException {
-        
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        //Session session = sessionFactory.getCurrentSession();
+    public List<Person> findAllPersons() {
 		
+        Session session = sessionFactory.getCurrentSession();
+
         Query query = session.createQuery("from PersonVO");
 
         @SuppressWarnings("unchecked")
         List<PersonVO> personsVO = (List<PersonVO>) query.list();
 
-        return personsVO;
+        List<Person> persons = new ArrayList<>();
+        for(PersonVO personVO : personsVO) {
+                persons.add(PersonMapper.proccessVOBO(personVO));
+        }
+
+        return persons;
     }
 }
+
