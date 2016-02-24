@@ -5,7 +5,6 @@
  */
 package com.github.lcmapp.model.studies;
 
-import com.github.lcmapp.model.contracttype.*;
 import com.github.lcmapp.model.BusinessObject;
 
 /**
@@ -42,7 +41,5 @@ public class Studies implements BusinessObject{
 
     public void setStudiesname(String studiesname) {
         this.studiesname = studiesname;
-    }
-    
-        
+    }    
 }

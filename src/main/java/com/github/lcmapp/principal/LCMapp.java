@@ -1,16 +1,14 @@
 package com.github.lcmapp.principal;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.util.CollectionUtils;
-
 import com.github.lcmapp.model.mappers.PersonMapper;
 import com.github.lcmapp.model.person.Person;
 import com.github.lcmapp.model.person.PersonDao;
 import com.github.lcmapp.model.person.PersonVO;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.CollectionUtils;
 
 /**
  *
@@ -20,7 +18,7 @@ public class LCMapp {
         
     public static void main (String args[]){
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
     	PersonDao personDao = (PersonDao) context.getBean("personDao");
     
     	// Aquí empieza el código que haría tu Manager

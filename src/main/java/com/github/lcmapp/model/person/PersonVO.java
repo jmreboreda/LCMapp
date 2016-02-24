@@ -25,19 +25,16 @@ public class PersonVO implements ValueObject {
     private static final long serialVersionUID = 5361621336550354239L;
 
     private Long id;
-    private Integer personid;
-    private String lastname;
-    private String name;
-    private String nifcif;
-    private Integer nifcifdup;
-    private String inss;
+    private String lastName;
+    private String firstName;
+    private Integer nifCif;
+    private Integer nifCifdup;
+    private Integer socSecnumber;
     private Date birthdate;
-    private String civilstatus;
+    private Integer civilStatus;
     private String address;
-    private String location;
-    private Integer postalcode;
     private Integer studies;
-    private String nacionality;
+    private Integer nacionality;
 
     public PersonVO() {
     }
@@ -54,52 +51,44 @@ public class PersonVO implements ValueObject {
         this.id = id;
     }
 
-    public Integer getPersonid() {
-        return personid;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPersonid(Integer personid) {
-        this.personid = personid;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getName() {
-        return name;
+    public Integer getNifCif() {
+        return nifCif;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNifCif(Integer nifCif) {
+        this.nifCif = nifCif;
     }
 
-    public String getNifcif() {
-        return nifcif;
+    public Integer getNifCifdup() {
+        return nifCifdup;
     }
 
-    public void setNifcif(String nifcif) {
-        this.nifcif = nifcif;
+    public void setNifCifdup(Integer nifCifdup) {
+        this.nifCifdup = nifCifdup;
     }
 
-    public Integer getNifcifdup() {
-        return nifcifdup;
+    public Integer getSocSecNumber() {
+        return socSecnumber;
     }
 
-    public void setNifcifdup(Integer nifcifdup) {
-        this.nifcifdup = nifcifdup;
-    }
-
-    public String getInss() {
-        return inss;
-    }
-
-    public void setInss(String inss) {
-        this.inss = inss;
+    public void setSocSecNumber(Integer ssNumber) {
+        this.socSecnumber = ssNumber;
     }
 
     public Date getBirthdate() {
@@ -110,12 +99,12 @@ public class PersonVO implements ValueObject {
         this.birthdate = birthdate;
     }
 
-    public String getCivilstatus() {
-        return civilstatus;
+    public Integer getCivilStatus() {
+        return civilStatus;
     }
 
-    public void setCivilstatus(String civilstatus) {
-        this.civilstatus = civilstatus;
+    public void setCivilStatus(Integer civilStatus) {
+        this.civilStatus = civilStatus;
     }
 
     public String getAddress() {
@@ -126,22 +115,6 @@ public class PersonVO implements ValueObject {
         this.address = address;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Integer getPostalcode() {
-        return postalcode;
-    }
-
-    public void setPostalcode(Integer postalcode) {
-        this.postalcode = postalcode;
-    }
-
     public Integer getStudies() {
         return studies;
     }
@@ -150,11 +123,13 @@ public class PersonVO implements ValueObject {
         this.studies = studies;
     }
 
-    public String getNacionality() {
+    public Integer getNacionality() {
         return nacionality;
     }
 
-    public void setNacionality(String nacionality) {
+    public void setNacionality(Integer nacionality) {
         this.nacionality = nacionality;
     }
+
+    
 }
