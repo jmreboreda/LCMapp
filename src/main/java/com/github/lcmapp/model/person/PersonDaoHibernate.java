@@ -42,7 +42,7 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
     }
 
     @Override
-    public List<Person> findAllPersons() {
+    public List<PersonVO> findAllPersons() {
 		
         Session session = sessionFactory.getCurrentSession();
 
@@ -51,12 +51,7 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
         @SuppressWarnings("unchecked")
         List<PersonVO> personsVO = (List<PersonVO>) query.list();
 
-        List<Person> persons = new ArrayList<>();
-        for(PersonVO personVO : personsVO) {
-                persons.add(PersonMapper.proccessVOBO(personVO));
-        }
-
-        return persons;
+        return personsVO;
     }
 }
 
