@@ -5,17 +5,17 @@
  */
 package com.github.lcmapp.model.person;
 
-import com.github.lcmapp.model.dao.GenericDaoHibernate;
-import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
-import com.github.lcmapp.model.mappers.PersonMapper;
-import java.util.ArrayList;
 import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.github.lcmapp.model.dao.GenericDaoHibernate;
+import com.github.lcmapp.model.exceptions.InstanceNotFoundException;
 
 @Repository("personDao")
 @Transactional

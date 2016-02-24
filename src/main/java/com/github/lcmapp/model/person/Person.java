@@ -155,4 +155,8 @@ public class Person implements BusinessObject {
                         + formatter.format(getBirthdate()) + ", con NIF " + getNifcif()
                         + ", y domicilio en " + getPostalcode() + " " + getLocation() + ", " + getAddress());
     }
+    public String toString() {
+    	return String.format("Person[ id=%s, name=%s, lastname=%s ]", this.id, this.name, this.lastname);
+    	
+    }
 }
