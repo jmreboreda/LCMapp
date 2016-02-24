@@ -6,7 +6,6 @@
 package com.github.lcmapp.model.person;
 
 import com.github.lcmapp.model.BusinessObject;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,23 +17,21 @@ public class Person implements BusinessObject {
     private static final long serialVersionUID = 3443058171068955864L;
     
     private Long id;
-    private Integer personid;
-    private String lastname;
-    private String name;
-    private String nifcif;
-    private Integer nifcifdup;
-    private String inss;
+    private String lastName;
+    private String firstName;
+    private Integer nifCif;
+    private Integer nifCifdup;
+    private Integer socSecNumber;
     private Date birthdate;
-    private String civilstatus;
+    private Integer civilStatus;
     private String address;
-    private String location;
-    private Integer postalcode;
     private Integer studies;
-    private String nacionality;
+    private Integer nacionality;
 
     
     public Person() {
     }
+
 
     public Long getId() {
         return id;
@@ -44,52 +41,44 @@ public class Person implements BusinessObject {
         this.id = id;
     }
 
-    public Integer getPersonid() {
-        return personid;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPersonid(Integer personid) {
-        this.personid = personid;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getName() {
-        return name;
+    public Integer getNifCif() {
+        return nifCif;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNifCif(Integer nifCif) {
+        this.nifCif = nifCif;
     }
 
-    public String getNifcif() {
-        return nifcif;
+    public Integer getNifCifdup() {
+        return nifCifdup;
     }
 
-    public void setNifcif(String nifcif) {
-        this.nifcif = nifcif;
+    public void setNifCifdup(Integer nifCifdup) {
+        this.nifCifdup = nifCifdup;
     }
 
-    public Integer getNifcifdup() {
-        return nifcifdup;
+    public Integer getSocSecNumber() {
+        return socSecNumber;
     }
 
-    public void setNifcifdup(Integer nifcifdup) {
-        this.nifcifdup = nifcifdup;
-    }
-
-    public String getInss() {
-        return inss;
-    }
-
-    public void setInss(String inss) {
-        this.inss = inss;
+    public void setSocSecNumber(Integer ssNumber) {
+        this.socSecNumber = ssNumber;
     }
 
     public Date getBirthdate() {
@@ -100,12 +89,12 @@ public class Person implements BusinessObject {
         this.birthdate = birthdate;
     }
 
-    public String getCivilstatus() {
-        return civilstatus;
+    public Integer getCivilStatus() {
+        return civilStatus;
     }
 
-    public void setCivilstatus(String civilstatus) {
-        this.civilstatus = civilstatus;
+    public void setCivilStatus(Integer civilStatus) {
+        this.civilStatus = civilStatus;
     }
 
     public String getAddress() {
@@ -116,22 +105,6 @@ public class Person implements BusinessObject {
         this.address = address;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Integer getPostalcode() {
-        return postalcode;
-    }
-
-    public void setPostalcode(Integer postalcode) {
-        this.postalcode = postalcode;
-    }
-
     public Integer getStudies() {
         return studies;
     }
@@ -140,19 +113,15 @@ public class Person implements BusinessObject {
         this.studies = studies;
     }
 
-    public String getNacionality() {
+    public Integer getNacionality() {
         return nacionality;
     }
 
-    public void setNacionality(String nacionality) {
+    public void setNacionality(Integer nacionality) {
         this.nacionality = nacionality;
     }
     
-    public void list(){
-        
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        System.out.println("[" + getId() + "] " + getLastname()+ ", " + getName() + " nacimiento el "
-                        + formatter.format(getBirthdate()) + ", con NIF " + getNifcif()
-                        + ", y domicilio en " + getPostalcode() + " " + getLocation() + ", " + getAddress());
+    public String toString() {
+    	return String.format("Person[ id=%s, name=%s, lastname=%s ]", this.id, this.firstName, this.lastName);
     }
 }

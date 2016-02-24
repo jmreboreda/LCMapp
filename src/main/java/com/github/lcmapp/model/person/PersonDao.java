@@ -19,6 +19,6 @@ public interface PersonDao extends GenericDAO<PersonVO, Long> {
     
     PersonVO findPersonByName(String name) throws InstanceNotFoundException;
     
-    List<Person> findAllPersons() throws InstanceNotFoundException;
+    List<PersonVO> findAllPersons();
         
 }
